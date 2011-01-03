@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer">
+		<property name="connectionFactory" ref="connectionFactory"/>
+		<property name="queueName" value="samples.queue"/>
+		<property name="messageListener">
+			<bean class="org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter">
+				<property name="delegate" ref="logger"/>
+				<property name="defaultListenerMethod" value="log"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="logger" class="core.Logger"/>
+
+	<bean class="org.springframework.amqp.core.Queue">
+		<constructor-arg value="samples.queue"/>
+	</bean>
+
+	<bean class="org.springframework.amqp.rabbit.core.RabbitAdmin">
+		<constructor-arg ref="template"/>
+	</bean>
+
+	<bean id="template" class="org.springframework.amqp.rabbit.core.RabbitTemplate">
+		<property name="connectionFactory" ref="connectionFactory"/>
+	</bean>
+
+	<bean id="connectionFactory" class="org.springframework.amqp.rabbit.connection.CachingConnectionFactory"/>
+
+</beans>
