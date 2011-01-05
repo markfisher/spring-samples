@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="greeter" class="greeting.SimpleGreetingService">
+	<bean id="greeter" class="core.SimpleGreetingService">
 		<constructor-arg ref="generator"/>
 	</bean>
 
-	<bean id="generator" class="greeting.DefaultGreetingGenerator"/>
+	<bean id="generator" class="core.DefaultGreetingGenerator"/>
 
 </beans>

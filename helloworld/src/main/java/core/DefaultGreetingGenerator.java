@@ -1,4 +1,4 @@
-package greeting;
+package core;
 
 public class DefaultGreetingGenerator implements GreetingGenerator {
 

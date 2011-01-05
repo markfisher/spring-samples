@@ -1,9 +1,10 @@
 package demo.annotation;
 
-import greeting.GreetingService;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import core.GreetingService;
 
 public class SpringAnnotationDemo {
 

@@ -1,11 +1,10 @@
-package greeting;
+package core;
 
 import org.springframework.util.Assert;
 
-
 public class SimpleGreetingService implements GreetingService {
 
-	private GreetingGenerator generator;
+	private final GreetingGenerator generator;
 
 	public SimpleGreetingService(GreetingGenerator generator) {
 		Assert.notNull(generator, "generator is required");

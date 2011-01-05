@@ -1,8 +1,8 @@
 package demo;
 
-import greeting.DefaultGreetingGenerator;
-import greeting.GreetingGenerator;
-import greeting.SimpleGreetingService;
+import core.DefaultGreetingGenerator;
+import core.GreetingGenerator;
+import core.SimpleGreetingService;
 
 public class SimpleDemo {
 

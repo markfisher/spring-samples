@@ -1,12 +1,12 @@
 package demo.annotation;
 
-import greeting.DefaultGreetingGenerator;
-import greeting.GreetingGenerator;
-import greeting.GreetingService;
-import greeting.SimpleGreetingService;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import core.DefaultGreetingGenerator;
+import core.GreetingGenerator;
+import core.GreetingService;
+import core.SimpleGreetingService;
 
 @Configuration
 public class Beans {
