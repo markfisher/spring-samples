@@ -43,7 +43,7 @@ public class Neo4jDemo {
 		System.out.println("There are currently " + personRepository.count() + " people in the DB:");
 		List<Person> people = personRepository.getAll();
 		for (Person person : people) {
-			System.out.println(person.toString() + person.friendsToString());
+			System.out.println(person.toString() + " has " + person.friendsToString());
 		}
 
 		context.close();

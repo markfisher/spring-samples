@@ -33,7 +33,7 @@ public class Person {
         this.relateTo(person, RelationshipTypes.KNOWS);
     }
 
-    public boolean canBeReachedFrom(Person person)
+    public boolean isFriendsWith(Person person)
     {
         return this.friends.contains(person);
     }
@@ -43,6 +43,6 @@ public class Person {
 	}
 
 	public String friendsToString() {
-		return " has " + friends.size() + " friend(s): " + friends;
+		return friends.size() + " friend(s): " + friends;
 	}
 }
